@@ -1,0 +1,13 @@
+long long squaresInMatrix(int m, int n) 
+    {
+        long temp =0;
+        while(m>=1 && n>=1)
+          {
+             temp=temp+m*n;
+             m--;n--;
+           }
+           
+           
+        return temp;
+        
+    }
