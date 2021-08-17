@@ -1,0 +1,24 @@
+void reverse (vector<int>& Mat, int low, int high)
+  {
+     
+      while(low<high)
+      {
+          swap(Mat[low], Mat[high]);
+          low++;
+          high--;
+      }
+  }
+    vector<vector<int>> rotateMatrix(int N, int M, int K,
+                                     vector<vector<int>> Mat) 
+    {
+        K=K%M; // This is important
+        for(int i=0; i<N; i++)
+        {
+            reverse(Mat[i],0,K-1);
+            reverse(Mat[i],K,M-1);
+            reverse(Mat[i],0,M-1);
+        }
+        
+        
+        return Mat;
+    }
