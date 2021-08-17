@@ -1,0 +1,22 @@
+vector<vector<int>> sortedMatrix(int N, vector<vector<int>> Mat) 
+    {
+        vector<int> ans;
+        
+        for(auto i : Mat)
+        ans.insert(ans.begin(), i.begin(), i.end());
+        
+        sort(ans.begin(), ans.end());
+        int count=0;
+        
+        for(int i=0; i<Mat.size(); i++)
+        {
+            for(int j=0; j<Mat[i].size(); j++)
+            {
+                Mat[i][j] = ans[count++];
+            }
+        }
+        
+        return Mat;
+        
+        
+    }
